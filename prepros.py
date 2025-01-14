@@ -17,8 +17,10 @@ transform_pipeline = v2.Compose([
     v2.CenterCrop(size=(224, 224)),  # Then randomly crop the image to 224x224
     v2.RandomHorizontalFlip(p=0.5),  # Horizontal flip with probability 0.5
     v2.ConvertImageDtype(torch.float32),  # Convert image to float32
-    v2.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),  # Normalize
+    v2.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),  # Normalize is van standaard values waarop het model is op getrained
 ])
+
+#Imagenet 2.24
 
 # Process and save images
 for file_name in os.listdir(input_folder):
